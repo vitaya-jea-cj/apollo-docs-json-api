@@ -1,0 +1,65 @@
+{
+    "component": "Button",
+    "id": "component:button",
+    "slug": "/components/button",
+    "description": "A customizable action component supporting multiple styles, sizes, and decorators. Can be rendered as a button or anchor.",
+    "props": [
+      { "name": "color", "type": "'danger' | 'primary'", "default": "primary", "description": "Theme color." },
+      { "name": "disabled", "type": "boolean", "default": "false", "description": "Disables the component. Not for links." },
+      { "name": "size", "type": "'medium' | 'small'", "default": "medium", "description": "Size of the button." },
+      { "name": "variant", "type": "'outline' | 'plain' | 'solid'", "default": "solid", "description": "Style variant." },
+      { "name": "startDecorator", "type": "ReactNode", "description": "Element before text." },
+      { "name": "endDecorator", "type": "ReactNode", "description": "Element after text." },
+      { "name": "fullWidth", "type": "boolean", "default": "false", "description": "Expands to container width." },
+      { "name": "href", "type": "string", "description": "Renders as anchor element." },
+      { "name": "fileType", "type": "string", "description": "Sets anchor type attribute." }
+    ],
+    "examples": [
+      {
+        "title": "Variants",
+        "description": "Demonstrates 'solid', 'plain', and 'outline' styles.",
+        "code": "<Button variant=\"solid\">Solid</Button>\n<Button variant=\"outline\">Outline</Button>\n<Button variant=\"plain\">Plain</Button>"
+      },
+      {
+        "title": "Color",
+        "description": "Primary and danger themed buttons.",
+        "code": "<Button color=\"primary\">Primary</Button>\n<Button color=\"danger\">Danger</Button>"
+      },
+      {
+        "title": "Decorators",
+        "description": "Buttons with leading and trailing icons.",
+        "code": "<Button startDecorator={<Icon />}>Start</Button>\n<Button endDecorator={<Icon />}>End</Button>"
+      },
+      {
+        "title": "Disabled",
+        "description": "Inactive, non-clickable state.",
+        "code": "<Button disabled>Disabled</Button>"
+      },
+      {
+        "title": "As Link",
+        "description": "Buttons rendered as anchors using 'href'.",
+        "code": "<Button href=\"https://example.com\">Link Button</Button>"
+      }
+    ],
+    "css": [
+      { "class": ".ApolloButton-root", "description": "Root container styling." }
+    ],
+    "migrationGuide": {
+      "breakingChanges": [
+        "Removed 'loading', 'action', and 'as' props.",
+        "Changed 'size' to accept only 'small' or 'medium'."
+      ],
+      "newFeatures": ["Added support for 'href' to render as anchor."],
+      "improvements": [
+        "Improved accessibility and performance.",
+        "Enhanced customization and theming."
+      ],
+      "steps": [
+        "Update imports from '@apollo/ui'.",
+        "Replace old size values with 'small' or 'medium'.",
+        "Remove deprecated props.",
+        "Use 'href' for link behavior."
+      ]
+    },
+    "sourceLink": "https://cjx-apollo-ui.netlify.app/docs/components/button"
+  }
