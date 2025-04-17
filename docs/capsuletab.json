@@ -1,0 +1,27 @@
+{
+  "component": "CapsuleTab",
+  "id": "component:capsuletab",
+  "slug": "/components/capsule-tab",
+  "description": "The CapsuleTab component is used to create a tabbed interface with a capsule-style design. It allows users to switch between different views or content.",
+  "props": [
+    { "name": "tabs", "type": "Array<{ id: string; label: ReactNode }>", "required": true, "description": "Array of tab objects with id and label." },
+    { "name": "selectedIndex", "type": "number", "required": true, "description": "Index of the currently selected tab." },
+    { "name": "onSelect", "type": "(index: number) => void", "required": true, "description": "Callback when a tab is selected." },
+    { "name": "className", "type": "string", "description": "Additional class names for the root element." },
+    { "name": "ref", "type": "React.Ref<HTMLDivElement>", "description": "Ref for the root element." }
+  ],
+  "examples": [
+    {
+      "title": "Basic Capsule Tabs",
+      "description": "A simple example of capsule tabs with three options.",
+      "code": "const [selectedTab, setSelectedTab] = useState(0);\n<CapsuleTab\n  tabs={[\n    { label: 'Tab 1', id: 'tab1' },\n    { label: 'Tab 2', id: 'tab2' },\n    { label: 'Tab 3', id: 'tab3' }\n  ]}\n  selectedIndex={selectedTab}\n  onSelect={setSelectedTab}\n/>"
+    }
+  ],
+  "css": [
+    { "class": ".ApolloCapsuleTab-root", "description": "Styles applied to the root element." },
+    { "class": ".ApolloCapsuleTab-container", "description": "Styles applied to the container." },
+    { "class": ".ApolloCapsuleTab-item", "description": "Styles applied to each tab item." },
+    { "class": ".ApolloCapsuleTab-itemSelected", "description": "Styles applied to the selected tab item." }
+  ],
+  "sourceLink": "https://cjx-apollo-ui.netlify.app/docs/components/capsule-tab"
+}

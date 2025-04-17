@@ -1,0 +1,44 @@
+{
+  "component": "Switch",
+  "id": "component:switch",
+  "slug": "/components/switch",
+  "description": "The Switch component is a toggle control that allows users to switch between two states, such as on and off. It supports controlled and uncontrolled modes, labels, and can be integrated with forms.",
+  "props": [
+    { "name": "checked", "type": "boolean", "description": "If true, the switch is checked (controlled)." },
+    { "name": "defaultChecked", "type": "boolean", "default": false, "description": "The default checked state (uncontrolled)." },
+    { "name": "disabled", "type": "boolean", "default": false, "description": "If true, the switch is disabled." },
+    { "name": "label", "type": "ReactNode", "description": "The label content for the switch." },
+    { "name": "actionText", "type": "ReactNode", "description": "Text displayed next to the switch to indicate action or state." },
+    { "name": "onCheckedChange", "type": "(checked: boolean) => void", "description": "Callback fired when the checked state changes." }
+  ],
+  "examples": [
+    {
+      "title": "Basic Usage",
+      "description": "Basic examples of switches in their default and unchecked states.",
+      "code": "<Switch defaultChecked label=\"Default Checked\" actionText=\"On/Off\" onCheckedChange={checked => console.log('Checked:', checked)} />\n<Switch label=\"Unchecked\" actionText=\"On/Off\" onCheckedChange={checked => console.log('Unchecked:', checked)} />\n<Switch defaultChecked onCheckedChange={checked => console.log('No Label or ActionText:', checked)} />"
+    },
+    {
+      "title": "Controlled Component",
+      "description": "Example of a controlled switch where the state is managed externally.",
+      "code": "const [isChecked, setIsChecked] = useState(false);\n<Switch checked={isChecked} label=\"Controlled Switch\" actionText=\"On/Off\" onCheckedChange={checked => setIsChecked(checked)} />\n<Switch checked={isChecked} onCheckedChange={checked => setIsChecked(checked)} />"
+    },
+    {
+      "title": "Disabled",
+      "description": "Examples of switches in disabled states.",
+      "code": "<Switch disabled defaultChecked label=\"Disabled Checked\" actionText=\"On/Off\" />\n<Switch disabled label=\"Disabled Unchecked\" actionText=\"On/Off\" />\n<Switch disabled defaultChecked />"
+    },
+    {
+      "title": "Form Integration",
+      "description": "Example of integrating the switch with a form using react-hook-form.",
+      "code": "import { useForm, Controller } from 'react-hook-form';\nconst { control, handleSubmit } = useForm({ defaultValues: { switchField: false } });\n<form onSubmit={handleSubmit(onSubmit)}>\n  <Controller name=\"switchField\" control={control} render={({ field: { value, ...field } }) => (\n    <Switch {...field} checked={value} label=\"Form Controlled Switch\" actionText=\"On/Off\" onCheckedChange={checked => field.onChange(checked)} />\n  )} />\n  <button type=\"submit\">Submit</button>\n</form>"
+    }
+  ],
+  "css": [
+    { "class": ".ApolloSwitch-fieldRoot", "description": "Styles applied to the root container of the field wrapping the switch." },
+    { "class": ".ApolloSwitch-wrapperRoot", "description": "Styles applied to the wrapper element containing the switch and its label." },
+    { "class": ".ApolloSwitch-switchRoot", "description": "Styles applied to the root element of the switch component." },
+    { "class": ".ApolloSwitch-thumbRoot", "description": "Styles applied to the thumb element of the switch." },
+    { "class": ".ApolloSwitch-actionText", "description": "Styles applied to the action text displayed next to the switch." }
+  ],
+  "sourceLink": "https://cjx-apollo-ui.netlify.app/docs/components/switch"
+}

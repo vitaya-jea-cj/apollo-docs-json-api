@@ -1,0 +1,51 @@
+{
+  "component": "Radio",
+  "id": "component:radio",
+  "slug": "/components/radio",
+  "description": "The Radio and RadioGroup components allow users to select one option from a set. They support various layouts, states, and custom labels.",
+  "props": [
+    { "name": "value", "type": "string", "required": true, "description": "The value of the radio button." },
+    { "name": "disabled", "type": "boolean", "default": false, "description": "If true, the radio is disabled." },
+    { "name": "children", "type": "ReactNode", "description": "The label or content for the radio." }
+  ],
+  "groupProps": [
+    { "name": "name", "type": "string", "description": "Name attribute for the group." },
+    { "name": "value", "type": "string", "description": "The selected value (controlled)." },
+    { "name": "defaultValue", "type": "string", "description": "The default selected value (uncontrolled)." },
+    { "name": "onValueChange", "type": "(value: string) => void", "description": "Callback fired when the selected value changes." },
+    { "name": "disabled", "type": "boolean", "default": false, "description": "If true, all radios in the group are disabled." },
+    { "name": "direction", "type": "'vertical' | 'horizontal'", "default": "vertical", "description": "Layout direction of the radio group." }
+  ],
+  "examples": [
+    {
+      "title": "Basic Usage",
+      "description": "A simple example of a RadioGroup with three options.",
+      "code": "<RadioGroup name=\"fruits\" defaultValue=\"apple\">\n  <Radio value=\"apple\">Apple</Radio>\n  <Radio value=\"banana\">Banana</Radio>\n  <Radio value=\"cherry\">Cherry</Radio>\n</RadioGroup>"
+    },
+    {
+      "title": "Controlled RadioGroup",
+      "description": "A controlled RadioGroup where the selected value is managed by state.",
+      "code": "const [selected, setSelected] = useState('apple');\n<RadioGroup name=\"fruits\" value={selected} onValueChange={setSelected}>\n  <Radio value=\"apple\">Apple</Radio>\n  <Radio value=\"banana\">Banana</Radio>\n  <Radio value=\"cherry\">Cherry</Radio>\n</RadioGroup>"
+    },
+    {
+      "title": "Disabled",
+      "description": "A RadioGroup where all options are disabled.",
+      "code": "<RadioGroup disabled name=\"fruits\" defaultValue=\"apple\">\n  <Radio value=\"apple\">Apple</Radio>\n  <Radio value=\"banana\">Banana</Radio>\n  <Radio value=\"cherry\">Cherry</Radio>\n</RadioGroup>"
+    },
+    {
+      "title": "Horizontal Layout",
+      "description": "A RadioGroup with a horizontal layout.",
+      "code": "<RadioGroup direction=\"horizontal\" name=\"fruits\" defaultValue=\"apple\">\n  <Radio value=\"apple\">Apple</Radio>\n  <Radio value=\"banana\">Banana</Radio>\n  <Radio value=\"cherry\">Cherry</Radio>\n</RadioGroup>"
+    },
+    {
+      "title": "Custom Labels",
+      "description": "A RadioGroup with custom labels using the Typography component.",
+      "code": "<RadioGroup name=\"fruits\" defaultValue=\"apple\">\n  <Radio value=\"apple\"><Typography level=\"h2\">Huge Word</Typography></Radio>\n  <Radio value=\"banana\"><Typography level=\"h3\">Big Word</Typography></Radio>\n  <Radio value=\"cherry\">Normal Word</Radio>\n</RadioGroup>"
+    }
+  ],
+  "css": [
+    { "class": ".ApolloRadio-labelText", "description": "Styles applied to the label text." },
+    { "class": ".ApolloRadio-root", "description": "Styles applied to the root element." }
+  ],
+  "sourceLink": "https://cjx-apollo-ui.netlify.app/docs/components/radio"
+}

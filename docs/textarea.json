@@ -1,0 +1,52 @@
+{
+  "component": "Textarea",
+  "id": "component:textarea",
+  "slug": "/components/textarea",
+  "description": "The Textarea component is a flexible and customizable UI element for user input. It supports various styles, sizes, and can display helper text and error messages.",
+  "props": [
+    { "name": "size", "type": "'medium' | 'small'", "default": "medium", "description": "The size of the component." },
+    { "name": "label", "type": "ReactNode", "description": "The label for the textarea." },
+    { "name": "helperText", "type": "ReactNode", "description": "Helper text displayed below the textarea." },
+    { "name": "placeholder", "type": "string", "description": "Placeholder text when no value is entered." },
+    { "name": "error", "type": "boolean", "default": false, "description": "If true, the textarea will display an error state." },
+    { "name": "required", "type": "boolean", "default": false, "description": "If true, the textarea will display a required indicator." },
+    { "name": "disabled", "type": "boolean", "default": false, "description": "If true, the textarea is disabled." },
+    { "name": "fullWidth", "type": "boolean", "default": false, "description": "If true, the textarea will take up the full width of its container." }
+  ],
+  "examples": [
+    {
+      "title": "Sizes",
+      "description": "Different sizes of textareas including medium and small.",
+      "code": "<Textarea label=\"Small Textarea\" size=\"small\" placeholder=\"Enter text\" />\n<Textarea label=\"Medium Textarea\" size=\"medium\" placeholder=\"Enter text\" />"
+    },
+    {
+      "title": "Disabled",
+      "description": "Textareas that are disabled and not interactive.",
+      "code": "<Textarea label=\"Disabled Textarea\" disabled placeholder=\"Enter text\" />"
+    },
+    {
+      "title": "Error State",
+      "description": "Textareas that display an error state.",
+      "code": "<Textarea label=\"Textarea with Error\" error helperText=\"Error text\" />"
+    },
+    {
+      "title": "Full Width",
+      "description": "Textareas that take up the full width of their container.",
+      "code": "<Textarea label=\"Full Width Textarea\" fullWidth placeholder=\"Enter text\" />"
+    },
+    {
+      "title": "Label and Helper Text",
+      "description": "Textareas with a label and helper text displayed.",
+      "code": "<Textarea label=\"Textarea with Label\" placeholder=\"Enter text\" />\n<Textarea label=\"Textarea with Helper Text\" helperText=\"Helper text\" />"
+    },
+    {
+      "title": "Required",
+      "description": "Textareas that display a required indicator.",
+      "code": "<Textarea label=\"Required Textarea\" required placeholder=\"Enter text\" />"
+    }
+  ],
+  "css": [
+    { "class": ".ApolloTextarea-fieldRoot", "description": "Styles applied to the field root." }
+  ],
+  "sourceLink": "https://cjx-apollo-ui.netlify.app/docs/components/textarea"
+}

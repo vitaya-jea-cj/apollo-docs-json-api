@@ -1,0 +1,64 @@
+{
+  "component": "Input",
+  "id": "component:input",
+  "slug": "/components/input",
+  "description": "The Input component is a flexible and customizable UI element for user input. It supports various styles, sizes, decorators, and can display helper text and error messages.",
+  "props": [
+    { "name": "size", "type": "'medium' | 'small'", "default": "medium", "description": "The size of the component." },
+    { "name": "startDecorator", "type": "ReactNode", "description": "Element placed before the input." },
+    { "name": "endDecorator", "type": "ReactNode", "description": "Element placed after the input." },
+    { "name": "error", "type": "boolean", "default": false, "description": "If true, the input will display an error state." },
+    { "name": "label", "type": "ReactNode", "description": "The label for the input." },
+    { "name": "helperText", "type": "ReactNode", "description": "The helper text for the input." },
+    { "name": "required", "type": "boolean", "default": false, "description": "If true, the input will display a required indicator." },
+    { "name": "disabled", "type": "boolean", "default": false, "description": "If true, the input is disabled." },
+    { "name": "fullWidth", "type": "boolean", "default": false, "description": "If true, the input will take up the full width of its container." },
+    { "name": "rootRef", "type": "Ref<HTMLDivElement>", "description": "Ref for the root element." },
+    { "name": "rootProps", "type": "HTMLAttributes<HTMLDivElement>", "description": "Props for the root element." },
+    { "name": "fieldProps", "type": "FieldProps", "description": "Props for the field element." }
+  ],
+  "examples": [
+    {
+      "title": "Sizes",
+      "description": "Different sizes of inputs including medium and small.",
+      "code": "<Input label=\"Small Input\" size=\"small\" placeholder=\"Enter text\" />\n<Input label=\"Medium Input\" size=\"medium\" placeholder=\"Enter text\" />"
+    },
+    {
+      "title": "Decorators",
+      "description": "Inputs with elements placed before or after the input field.",
+      "code": "<Input label=\"Input with Start Decorator\" startDecorator={<span>Start</span>} placeholder=\"Enter text\" />\n<Input label=\"Input with End Decorator\" endDecorator={<span>End</span>} placeholder=\"Enter text\" />\n<Input label=\"Input with Both Decorators\" startDecorator={<span>Start</span>} endDecorator={<span>End</span>} placeholder=\"Enter text\" />"
+    },
+    {
+      "title": "Disabled",
+      "description": "Inputs that are disabled and not interactive.",
+      "code": "<Input label=\"Disabled Input\" disabled placeholder=\"Enter text\" />"
+    },
+    {
+      "title": "Error State",
+      "description": "Inputs that display an error state.",
+      "code": "<Input label=\"Input with Error\" error helperText=\"Error text\" />"
+    },
+    {
+      "title": "Full Width",
+      "description": "Inputs that take up the full width of their container.",
+      "code": "<Input label=\"Full Width Input\" fullWidth placeholder=\"Enter text\" />"
+    },
+    {
+      "title": "Label & Helper Text",
+      "description": "Inputs with a label and helper text displayed.",
+      "code": "<Input label=\"Input with Helper Text\" helperText=\"Helper text\" />"
+    },
+    {
+      "title": "Required",
+      "description": "Inputs that display a required indicator.",
+      "code": "<Input label=\"Required Input\" required placeholder=\"Enter text\" />"
+    }
+  ],
+  "css": [
+    { "class": ".ApolloInput-fieldRoot", "description": "Styles applied to the field root." },
+    { "class": ".ApolloInput-controlRoot", "description": "Styles applied to the control root." },
+    { "class": ".ApolloInput-startDecorator", "description": "Styles applied to the start decorator element." },
+    { "class": ".ApolloInput-endDecorator", "description": "Styles applied to the end decorator element." }
+  ],
+  "sourceLink": "https://cjx-apollo-ui.netlify.app/docs/components/input"
+}

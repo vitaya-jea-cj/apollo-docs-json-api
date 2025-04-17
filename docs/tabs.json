@@ -1,0 +1,55 @@
+{
+  "component": "Tabs",
+  "id": "component:tabs",
+  "slug": "/components/tabs",
+  "description": "Tabs component is used to organize content into multiple sections and allow users to navigate between them.",
+  "sourceLink": "https://cjx-apollo-ui.netlify.app/docs/components/tabs",
+  "props": [
+    { "name": "value", "type": "string", "description": "The controlled value of the tab to activate. Use with onValueChange." },
+    { "name": "defaultValue", "type": "string", "description": "The value of the tab that should be active when initially rendered." },
+    { "name": "onValueChange", "type": "(value: string) => void", "description": "Callback fired when the value changes." },
+    { "name": "fullWidth", "type": "boolean", "default": false, "description": "When true, tabs container will take up the full available width." },
+    { "name": "className", "type": "string", "description": "Additional CSS class for the root element." }
+  ],
+  "listProps": [
+    { "name": "className", "type": "string", "description": "Additional CSS class for the list element." }
+  ],
+  "tabProps": [
+    { "name": "value", "type": "string", "required": true, "description": "A unique value for the tab. Used to associate with the corresponding panel." },
+    { "name": "disabled", "type": "boolean", "default": false, "description": "When true, prevents the user from interacting with the tab." }
+  ],
+  "panelProps": [
+    { "name": "value", "type": "string", "required": true, "description": "The value of the tab this panel is associated with." },
+    { "name": "keepMounted", "type": "boolean", "description": "Whether to keep the HTML element in the DOM while the panel is hidden." },
+    { "name": "className", "type": "string", "description": "Additional CSS class for the panel element." }
+  ],
+  "examples": [
+    {
+      "title": "Basic Tabs",
+      "description": "A simple example of tabs with three options.",
+      "code": "<Tabs.Root defaultValue=\"tab1\">\n  <Tabs.List>\n    <Tabs.Tab value=\"tab1\">Tab 1</Tabs.Tab>\n    <Tabs.Tab value=\"tab2\">Tab 2</Tabs.Tab>\n    <Tabs.Tab value=\"tab3\">Tab 3</Tabs.Tab>\n    <Tabs.Indicator />\n  </Tabs.List>\n  <Tabs.Panel value=\"tab1\">Content for Tab 1</Tabs.Panel>\n  <Tabs.Panel value=\"tab2\">Content for Tab 2</Tabs.Panel>\n  <Tabs.Panel value=\"tab3\">Content for Tab 3</Tabs.Panel>\n</Tabs.Root>"
+    },
+    {
+      "title": "Controlled Tabs",
+      "description": "Tabs where the active tab is controlled by state.",
+      "code": "const [activeTab, setActiveTab] = useState('tab1');\n<Tabs.Root value={activeTab} onValueChange={setActiveTab}>\n  <Tabs.List>\n    <Tabs.Tab value=\"tab1\">Tab 1</Tabs.Tab>\n    <Tabs.Tab value=\"tab2\">Tab 2</Tabs.Tab>\n    <Tabs.Tab value=\"tab3\">Tab 3</Tabs.Tab>\n    <Tabs.Indicator />\n  </Tabs.List>\n  <Tabs.Panel value=\"tab1\">Content for Tab 1</Tabs.Panel>\n  <Tabs.Panel value=\"tab2\">Content for Tab 2</Tabs.Panel>\n  <Tabs.Panel value=\"tab3\">Content for Tab 3</Tabs.Panel>\n</Tabs.Root>"
+    },
+    {
+      "title": "Tabs with Icons",
+      "description": "Tabs with icons and custom content.",
+      "code": "<Tabs.Root defaultValue=\"icon1\">\n  <Tabs.List>\n    <Tabs.Tab value=\"icon1\"><span role=\"img\" aria-label=\"home\">🏠</span> Home</Tabs.Tab>\n    <Tabs.Tab value=\"icon2\"><span role=\"img\" aria-label=\"settings\">⚙️</span> Settings</Tabs.Tab>\n    <Tabs.Tab value=\"icon3\"><span role=\"img\" aria-label=\"profile\">👤</span> Profile</Tabs.Tab>\n    <Tabs.Indicator />\n  </Tabs.List>\n  <Tabs.Panel value=\"icon1\">Home content</Tabs.Panel>\n  <Tabs.Panel keepMounted value=\"icon2\">Settings content</Tabs.Panel>\n  <Tabs.Panel value=\"icon3\">Profile content</Tabs.Panel>\n</Tabs.Root>"
+    },
+    {
+      "title": "Full Width Tabs",
+      "description": "Tabs container takes up the full available width.",
+      "code": "<Tabs.Root fullWidth defaultValue=\"tab1\">\n  <Tabs.List>\n    <Tabs.Tab value=\"tab1\">Tab 1</Tabs.Tab>\n    <Tabs.Tab value=\"tab2\">Tab 2</Tabs.Tab>\n    <Tabs.Tab value=\"tab3\">Tab 3</Tabs.Tab>\n    <Tabs.Indicator />\n  </Tabs.List>\n  <Tabs.Panel value=\"tab1\">Content for Tab 1</Tabs.Panel>\n  <Tabs.Panel value=\"tab2\">Content for Tab 2</Tabs.Panel>\n  <Tabs.Panel value=\"tab3\">Content for Tab 3</Tabs.Panel>\n</Tabs.Root>"
+    }
+  ],
+  "css": [
+    { "class": ".ApolloTabs-root", "description": "Styles applied to the root element." },
+    { "class": ".ApolloTabs-list", "description": "Styles applied to the list element." },
+    { "class": ".ApolloTabs-tab", "description": "Styles applied to each tab element." },
+    { "class": ".ApolloTabs-indicator", "description": "Styles applied to the indicator element." },
+    { "class": ".ApolloTabs-panel", "description": "Styles applied to each panel element." }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "component": "IconButton",
+  "id": "component:iconbutton",
+  "slug": "/components/icon-button",
+  "description": "IconButton is a button that uses an icon. It can be a normal button or a link. It comes in various sizes and colors.",
+  "props": [
+    { "name": "color", "type": "'danger' | 'primary'", "default": "primary", "description": "The color of the component. Supports theme colors." },
+    { "name": "disabled", "type": "boolean", "default": false, "description": "If true, the component is disabled. Not available if rendered as a link." },
+    { "name": "size", "type": "'large' | 'medium' | 'small'", "default": "medium", "description": "The size of the component." },
+    { "name": "href", "type": "string", "description": "If provided, the button will be rendered as an anchor element." }
+  ],
+  "examples": [
+    {
+      "title": "Color",
+      "description": "Icon buttons with different color options.",
+      "code": "import { IconButton } from '@apollo/ui';\nimport { Heart, Smile } from '@design-systems/apollo-icons';\n\n<IconButton color=\"primary\"><Smile /></IconButton>\n<IconButton color=\"danger\"><Heart /></IconButton>"
+    },
+    {
+      "title": "Sizes",
+      "description": "Icon buttons with different sizes.",
+      "code": "import { IconButton } from '@apollo/ui';\nimport { Heart, Smile } from '@design-systems/apollo-icons';\n\n<IconButton><Smile /></IconButton>\n<IconButton size=\"small\"><Heart /></IconButton>\n<IconButton size=\"medium\"><Heart /></IconButton>\n<IconButton size=\"large\"><Heart /></IconButton>"
+    },
+    {
+      "title": "Disabled",
+      "description": "Icon button in disabled state.",
+      "code": "import { IconButton } from '@apollo/ui';\nimport { Heart } from '@design-systems/apollo-icons';\n\n<IconButton disabled><Heart /></IconButton>"
+    },
+    {
+      "title": "As Link",
+      "description": "Icon button rendered as an anchor element.",
+      "code": "import { IconButton } from '@apollo/ui';\nimport { Link } from '@design-systems/apollo-icons';\n\n<IconButton size=\"large\" href=\"https://cjx-apollo-ui.netlify.app/\" target=\"_blank\"><Link /></IconButton>"
+    }
+  ],
+  "css": [
+    { "class": ".ApolloIconButton-root", "description": "Styles applied to the root container." }
+  ],
+  "sourceLink": "https://cjx-apollo-ui.netlify.app/docs/components/icon-button/"
+}

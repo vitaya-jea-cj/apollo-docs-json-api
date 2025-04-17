@@ -1,0 +1,34 @@
+{
+  "component": "Typography",
+  "id": "component:typography",
+  "slug": "/components/typography",
+  "description": "The Typography component is a flexible and customizable UI element for displaying text. It supports various styles, sizes, colors, and alignments.",
+  "props": [
+    { "name": "level", "type": "'display1' | 'display2' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'body1' | 'body2' | 'caption' | 'textlink'", "default": "body1", "description": "The level of the typography element." },
+    { "name": "align", "type": "'left' | 'center' | 'right' | 'justify'", "default": "left", "description": "The alignment of the text." },
+    { "name": "color", "type": "'default' | 'danger' | 'warning' | 'success' | 'process' | 'primary'", "default": "default", "description": "The color of the text." },
+    { "name": "gutterBottom", "type": "boolean", "default": false, "description": "If true, adds margin below the text." },
+    { "name": "href", "type": "string", "description": "If set, renders as a link (only for 'textlink' level)." }
+  ],
+  "examples": [
+    {
+      "title": "Levels",
+      "description": "Different styles of typography including display, heading, body, caption, and text link.",
+      "code": "<Typography level=\"display1\">Display 1</Typography>\n<Typography level=\"h1\">Heading 1</Typography>\n<Typography level=\"body1\">Body 1</Typography>\n<Typography level=\"body2\">Body 2</Typography>\n<Typography level=\"caption\">Caption</Typography>\n<Typography level=\"textlink\" href=\"https://example.com\">Text Link</Typography>"
+    },
+    {
+      "title": "Color",
+      "description": "Typography with different color options.",
+      "code": "<Typography color=\"primary\">Primary Color</Typography>\n<Typography color=\"danger\">Danger Color</Typography>\n<Typography color=\"warning\">Warning Color</Typography>\n<Typography color=\"success\">Success Color</Typography>\n<Typography color=\"process\">Process Color</Typography>"
+    },
+    {
+      "title": "Alignment",
+      "description": "Typography with different alignment options.",
+      "code": "<Typography align=\"left\">Left Aligned</Typography>\n<Typography align=\"center\">Center Aligned</Typography>\n<Typography align=\"right\">Right Aligned</Typography>\n<Typography align=\"justify\">Justify Aligned</Typography>"
+    }
+  ],
+  "css": [
+    { "class": ".ApolloTypography-root", "description": "Styles applied to the root container." }
+  ],
+  "sourceLink": "https://cjx-apollo-ui.netlify.app/docs/components/typography"
+}

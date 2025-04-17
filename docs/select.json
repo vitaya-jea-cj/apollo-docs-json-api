@@ -1,0 +1,70 @@
+{
+  "component": "Select",
+  "id": "component:select",
+  "slug": "/components/select",
+  "description": "The Select component allows users to choose a single value from a list of options. It provides a dropdown interface for selecting from predefined options and supports various states like disabled, error, and required.",
+  "props": [
+    { "name": "label", "type": "ReactNode", "description": "The label for the select." },
+    { "name": "helperText", "type": "ReactNode", "description": "Helper text displayed below the select." },
+    { "name": "placeholder", "type": "string", "description": "Placeholder text when no value is selected." },
+    { "name": "value", "type": "any", "description": "The selected value (controlled)." },
+    { "name": "defaultValue", "type": "any", "description": "The default selected value (uncontrolled)." },
+    { "name": "onChange", "type": "(value: any) => void", "description": "Callback fired when the selected value changes." },
+    { "name": "disabled", "type": "boolean", "default": false, "description": "If true, the select is disabled." },
+    { "name": "error", "type": "boolean", "default": false, "description": "If true, the select displays an error state." },
+    { "name": "required", "type": "boolean", "default": false, "description": "If true, the select displays a required indicator." },
+    { "name": "fullWidth", "type": "boolean", "default": false, "description": "If true, the select takes up the full width of its container." }
+  ],
+  "optionProps": [
+    { "name": "label", "type": "string", "required": true, "description": "The display text of the option." },
+    { "name": "value", "type": "any", "required": true, "description": "The value associated with the option." }
+  ],
+  "examples": [
+    {
+      "title": "Basic Usage",
+      "description": "Basic select with various options.",
+      "code": "<Select placeholder=\"Select a fruit\">\n  <Select.Option label=\"Apple\" value=\"apple\" />\n  <Select.Option label=\"Banana\" value=\"banana\" />\n  <Select.Option label=\"Cherry\" value=\"cherry\" />\n  <Select.Option label=\"Dragon Fruit\" value=\"dragonFruit\" />\n  <Select.Option label=\"Elderberry\" value=\"elderberry\" />\n</Select>"
+    },
+    {
+      "title": "With Label and Helper Text",
+      "description": "Select with a label and helper text.",
+      "code": "<Select label=\"Job Title\" helperText=\"Select your job title\">\n  <Select.Option label=\"Engineer\" value=\"engineer\" />\n  <Select.Option label=\"Designer\" value=\"designer\" />\n  <Select.Option label=\"Product Manager\" value=\"product_manager\" />\n  <Select.Option label=\"Developer\" value=\"developer\" />\n  <Select.Option label=\"Marketer\" value=\"marketer\" />\n</Select>"
+    },
+    {
+      "title": "Error State",
+      "description": "Select that displays an error state.",
+      "code": "<Select label=\"Country\" error helperText=\"Please select a country\">\n  <Select.Option label=\"USA\" value=\"us\" />\n  <Select.Option label=\"Canada\" value=\"ca\" />\n</Select>"
+    },
+    {
+      "title": "Disabled",
+      "description": "Select that is disabled and not interactive.",
+      "code": "<Select label=\"Languages\" helperText=\"Selection currently disabled\" disabled placeholder=\"Select a language\">\n  <Select.Option label=\"English\" value=\"en\" />\n  <Select.Option label=\"Spanish\" value=\"es\" />\n  <Select.Option label=\"French\" value=\"fr\" />\n  <Select.Option label=\"German\" value=\"de\" />\n  <Select.Option label=\"Italian\" value=\"it\" />\n</Select>"
+    },
+    {
+      "title": "Required",
+      "description": "Select that displays a required indicator.",
+      "code": "<Select label=\"Required Field\" required placeholder=\"Select an option\">\n  <Select.Option label=\"Option 1\" value=\"1\" />\n  <Select.Option label=\"Option 2\" value=\"2\" />\n</Select>"
+    },
+    {
+      "title": "Full Width",
+      "description": "Select that takes up the full width of its container.",
+      "code": "<Select label=\"Vehicle\" helperText=\"Select your preferred vehicle\" fullWidth placeholder=\"Select a vehicle\">\n  <Select.Option label=\"Car\" value=\"car\" />\n  <Select.Option label=\"Motorcycle\" value=\"motorcycle\" />\n  <Select.Option label=\"Bicycle\" value=\"bicycle\" />\n  <Select.Option label=\"Bus\" value=\"bus\" />\n  <Select.Option label=\"Train\" value=\"train\" />\n</Select>"
+    },
+    {
+      "title": "Controlled Component",
+      "description": "Example of a controlled select component.",
+      "code": "const [selectedCountry, setSelectedCountry] = useState(\"ca\");\n<Select label=\"Countries\" value={selectedCountry} onChange={setSelectedCountry} helperText={`Current selection: ${selectedCountry}`}>\n  <Select.Option label=\"Australia\" value=\"au\" />\n  <Select.Option label=\"Brazil\" value=\"br\" />\n  <Select.Option label=\"Canada\" value=\"ca\" />\n  <Select.Option label=\"Denmark\" value=\"dk\" />\n</Select>"
+    }
+  ],
+  "css": [
+    { "class": ".ApolloSelect-fieldRoot", "description": "Styles applied to the field root." },
+    { "class": ".ApolloSelect-triggerContainer", "description": "Styles applied to the select trigger container." },
+    { "class": ".ApolloSelect-trigger", "description": "Styles applied to the select trigger element." },
+    { "class": ".ApolloSelect-input", "description": "Styles applied to the input element." },
+    { "class": ".ApolloSelect-positioner", "description": "Styles applied to the dropdown menu positioner." },
+    { "class": ".ApolloSelect-popup", "description": "Styles applied to the dropdown popup." },
+    { "class": ".ApolloSelect-option", "description": "Styles applied to each option in the dropdown." },
+    { "class": ".ApolloSelect-menuItem", "description": "Styles applied to the menu item within each option." }
+  ],
+  "sourceLink": "https://cjx-apollo-ui.netlify.app/docs/components/select"
+}

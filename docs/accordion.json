@@ -1,0 +1,43 @@
+{
+  "component": "Accordion",
+  "id": "component:accordion",
+  "slug": "/components/accordion",
+  "description": "The Accordion component is used to create collapsible content sections that can be expanded or collapsed to show or hide information. It helps manage space and information hierarchy in the UI.",
+  "props": [
+    { "name": "label", "type": "ReactNode", "required": true, "description": "Content for the accordion header." },
+    { "name": "open", "type": "boolean", "description": "Controls the open state when component is controlled." },
+    { "name": "defaultOpen", "type": "boolean", "default": false, "description": "Initial open state for uncontrolled component." },
+    { "name": "onOpenChange", "type": "(open: boolean) => void", "description": "Callback when open state changes." },
+    { "name": "iconPosition", "type": "'start' | 'end' | 'both'", "default": "end", "description": "Position of the chevron icon." },
+    { "name": "borderless", "type": "boolean", "default": false, "description": "Removes the border styling." },
+    { "name": "variant", "type": "'default' | 'error'", "default": "default", "description": "Visual variant of the accordion." },
+    { "name": "iconVariant", "type": "'default' | 'primary'", "default": "default", "description": "Visual variant of the icon." },
+    { "name": "fullWidth", "type": "boolean", "default": false, "description": "Whether accordion takes full width of container." },
+    { "name": "keepMounted", "type": "boolean", "default": false, "description": "Keep contents mounted when closed." },
+    { "name": "ref", "type": "React.Ref<HTMLDivElement>", "description": "Ref for the root element." }
+  ],
+  "examples": [
+    {
+      "title": "Basic Accordion",
+      "description": "A simple accordion example that expands and collapses content.",
+      "code": "<Accordion label=\"Basic Accordion\">\n  <p>This is the content of the accordion. It can contain any React node, including text, other components, or HTML elements.</p>\n</Accordion>"
+    },
+    {
+      "title": "Controlled Accordion",
+      "description": "An example of a controlled accordion where the open state is managed externally.",
+      "code": "const [isOpen, setIsOpen] = useState(false);\n<Accordion label=\"Controlled Accordion\" open={isOpen} onOpenChange={setIsOpen}>\n  <p>This accordion's state is controlled externally. Use the button above to toggle it.</p>\n</Accordion>"
+    },
+    {
+      "title": "Complex Accordion",
+      "description": "A more complex example with custom label content, including typography and buttons. This showcases how to use the accordion with multiple customizations like borderless, fullWidth, iconPosition, and iconVariant.",
+      "code": "<Accordion\n  defaultOpen\n  borderless\n  fullWidth\n  variant=\"error\"\n  iconPosition=\"start\"\n  iconVariant=\"primary\"\n  label={\n    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>\n      <Typography level=\"caption\" style={{ maxWidth: '100px' }}>\n        011111 ชื่อสาขาสามารถยาว ได้้สองบรรทัด (จังหวัด)\n      </Typography>\n      <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end', gap: '8px' }}>\n        <Typography level=\"caption\">เปิดทำการ</Typography>\n        <Button onClick={e => e.stopPropagation()} variant=\"outline\" size=\"small\">เพิ่ม</Button>\n      </div>\n    </div>\n  }\n>\n  <div style={{ display: 'flex', flexDirection: 'column' }}>\n    <span>Model: CJ SUPERMARKET + BAO CAFÉ&WASH</span>\n    <span>Open date: 30/08/2004 Close</span>\n    <span>date: 30/08/2004</span>\n  </div>\n</Accordion>"
+    }
+  ],
+  "css": [
+    { "class": ".ApolloAccordion-container", "description": "Styles applied to the root element." },
+    { "class": ".ApolloAccordion-trigger", "description": "Styles applied to the trigger element." },
+    { "class": ".ApolloAccordion-trigger-content", "description": "Styles applied to the trigger content." },
+    { "class": ".ApolloAccordion-panel", "description": "Styles applied to the panel." }
+  ],
+  "sourceLink": "https://cjx-apollo-ui.netlify.app/docs/components/accordion"
+}

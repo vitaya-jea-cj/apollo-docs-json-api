@@ -1,0 +1,30 @@
+{
+  "component": "Chip",
+  "id": "component:chip",
+  "slug": "/components/chip",
+  "description": "The Chip component is a compact element that represents an input, attribute, or action. It can be used to display information or actions in a confined space.",
+  "props": [
+    { "name": "label", "type": "string", "required": true, "description": "The content of the chip." },
+    { "name": "size", "type": "'medium' | 'small'", "default": "medium", "description": "The size of the chip." },
+    { "name": "disabled", "type": "boolean", "default": false, "description": "If true, the chip will be disabled." },
+    { "name": "onClose", "type": "() => void", "description": "Callback fired when the delete icon is clicked." }
+  ],
+  "examples": [
+    {
+      "title": "Basic Chips",
+      "description": "Basic chips with different states including closeable and disabled variants.",
+      "code": "<Chip label=\"Basic Chip\" />\n<Chip label=\"Closeable Chip\" onClose={() => alert('Chip closed!')} />\n<Chip label=\"Disabled Chip\" disabled />"
+    },
+    {
+      "title": "Sizes",
+      "description": "Chips are available in two sizes: medium and small.",
+      "code": "<Chip label=\"Medium Chip\" size=\"medium\" />\n<Chip label=\"Small Chip\" size=\"small\" />"
+    }
+  ],
+  "css": [
+    { "class": ".ApolloChip-root", "description": "Styles applied to the root element." },
+    { "class": ".ApolloChip-label", "description": "Styles applied to the label text." },
+    { "class": ".ApolloChip-closeIcon", "description": "Styles applied to the close button icon." }
+  ],
+  "sourceLink": "https://cjx-apollo-ui.netlify.app/docs/components/chip"
+}

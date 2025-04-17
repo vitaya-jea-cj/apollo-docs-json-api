@@ -1,0 +1,49 @@
+{
+  "component": "Checkbox",
+  "id": "component:checkbox",
+  "slug": "/components/checkbox",
+  "description": "The Checkbox component is used for selecting single or multiple options. It supports checked, unchecked, indeterminate, and disabled states.",
+  "props": [
+    { "name": "label", "type": "ReactNode", "description": "The label content for the checkbox." },
+    { "name": "checked", "type": "boolean", "description": "If true, the checkbox will be checked (controlled)." },
+    { "name": "defaultChecked", "type": "boolean", "default": false, "description": "The default checked state (uncontrolled)." },
+    { "name": "indeterminate", "type": "boolean", "default": false, "description": "If true, the checkbox will be in an indeterminate state." },
+    { "name": "disabled", "type": "boolean", "default": false, "description": "If true, the checkbox will be disabled." },
+    { "name": "onChange", "type": "(event: React.ChangeEvent<HTMLInputElement>, checked: boolean) => void", "description": "Callback fired when the checked state changes." },
+    { "name": "ref", "type": "Ref<HTMLInputElement>", "description": "Ref for the underlying input element." },
+    { "name": "rootRef", "type": "Ref<HTMLLabelElement>", "description": "Ref for the root label element." }
+  ],
+  "examples": [
+    {
+      "title": "Basic Usage",
+      "description": "Basic checkbox examples showing different states.",
+      "code": "<Checkbox />\n<Checkbox indeterminate />\n<Checkbox defaultChecked />\n<Checkbox disabled />\n<Checkbox checked disabled />"
+    },
+    {
+      "title": "With Labels",
+      "description": "Checkboxes with different label configurations.",
+      "code": "<Checkbox label=\"Default Label\" />\n<Checkbox label={<div>Multi-line<br />Label Example</div>} />"
+    },
+    {
+      "title": "Disabled State",
+      "description": "Examples of disabled checkboxes.",
+      "code": "<Checkbox label=\"Disabled Unchecked\" disabled />\n<Checkbox label=\"Disabled Checked\" checked disabled />\n<Checkbox label=\"Disabled Indeterminate\" indeterminate disabled />"
+    },
+    {
+      "title": "Indeterminate State",
+      "description": "Checkbox with indeterminate state, commonly used in select-all scenarios.",
+      "code": "const [checkedItems, setCheckedItems] = useState([false, false, false]);\n<Checkbox indeterminate />\n{checkedItems.map((checked, index) => (\n  <Checkbox key={index} label={`Item ${index + 1}`} checked={checked} onChange={() => handleChildChange(index)} />\n))}"
+    },
+    {
+      "title": "Controlled Component",
+      "description": "Example of a controlled checkbox component.",
+      "code": "const [checked, setChecked] = useState(false);\n<Checkbox label={`Controlled Checkbox (${checked ? \"Checked\" : \"Unchecked\"})`} checked={checked} onChange={(event, isChecked) => setChecked(isChecked)} />"
+    }
+  ],
+  "css": [
+    { "class": ".ApolloCheckbox-root", "description": "Styles applied to the root element." },
+    { "class": ".ApolloCheckbox-checkbox", "description": "Styles applied to the checkbox element." },
+    { "class": ".ApolloCheckbox-label", "description": "Styles applied to the label element." }
+  ],
+  "sourceLink": "https://cjx-apollo-ui.netlify.app/docs/components/checkbox"
+}
