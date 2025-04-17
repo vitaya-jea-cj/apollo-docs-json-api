@@ -1,0 +1,66 @@
+{
+  "component": "Autocomplete",
+  "id": "component:autocomplete",
+  "slug": "/components/autocomplete",
+  "description": "A versatile input that enables users to select one or multiple values from a list of options. Supports search, async loading, infinite scroll, and multiple selection modes.",
+  "props": [
+    { "name": "options", "type": "Array<{ label: string, value: string, disabled?: boolean }>", "required": true, "description": "List of selectable options." },
+    { "name": "label", "type": "string", "description": "Input label." },
+    { "name": "placeholder", "type": "string", "description": "Placeholder text." },
+    { "name": "helperText", "type": "string", "description": "Helper or hint text." },
+    { "name": "size", "type": "'medium' | 'small'", "default": "medium", "description": "Input size." },
+    { "name": "required", "type": "boolean", "default": false, "description": "Marks input as required." },
+    { "name": "disabled", "type": "boolean", "default": false, "description": "Disables the input." },
+    { "name": "error", "type": "boolean", "default": false, "description": "Error state." },
+    { "name": "fullWidth", "type": "boolean", "default": false, "description": "Expands input to container width." },
+    { "name": "multiple", "type": "boolean", "default": false, "description": "Allows multiple selection." },
+    { "name": "value", "type": "string | string[]", "description": "Selected value(s)." },
+    { "name": "onChange", "type": "(value: string | string[]) => void", "description": "Change event handler." },
+    { "name": "loading", "type": "boolean", "default": false, "description": "Shows loading indicator." },
+    { "name": "noOptionsComponent", "type": "ReactNode", "description": "Custom component when no options are available." },
+    { "name": "debounceMs", "type": "number", "default": 0, "description": "Debounce delay for search input." }
+  ],
+  "examples": [
+    {
+      "title": "Basic Usage",
+      "description": "Single and small variants of Autocomplete.",
+      "code": "import { Autocomplete } from '@apollo/ui';\n\nconst options = [\n  { label: 'United States', value: 'US' },\n  { label: 'United Kingdom', value: 'UK' },\n  { label: 'France', value: 'FR' },\n  { label: 'Germany', value: 'DE' },\n  { label: 'Italy', value: 'IT' },\n];\n\n<Autocomplete options={options} label=\"Country\" placeholder=\"Select a country\" helperText=\"Choose your country\" />\n<Autocomplete size=\"small\" options={options} label=\"Country\" placeholder=\"Select a country\" />"
+    },
+    {
+      "title": "Multiple Selection",
+      "description": "Allow selecting multiple options with select all.",
+      "code": "<Autocomplete multiple options={options} label=\"Countries\" placeholder=\"Select countries\" />"
+    },
+    {
+      "title": "Async Search & Infinite Scroll",
+      "description": "Load options asynchronously and support infinite scroll.",
+      "code": "import { useCallback, useState } from 'react';\nimport { Autocomplete } from '@apollo/ui';\n\nconst allOptions = Array.from({ length: 50 }, (_, i) => ({ label: `Option ${i + 1}`, value: `value-${i + 1}` }));\n\nfunction Demo() {\n  const [options, setOptions] = useState(allOptions.slice(0, 10));\n  const [loadingMore, setLoadingMore] = useState(false);\n  const [hasMore, setHasMore] = useState(true);\n\n  const handleLoadMore = useCallback(async () => {\n    setLoadingMore(true);\n    await new Promise((resolve) => setTimeout(resolve, 1000));\n    const newOptions = allOptions.slice(options.length, options.length + 10);\n    setOptions([...options, ...newOptions]);\n    setHasMore(options.length + 10 < allOptions.length);\n    setLoadingMore(false);\n  }, [options]);\n\n  return (\n    <Autocomplete options={options} loading={loadingMore} onLoadMore={hasMore ? handleLoadMore : undefined} label=\"Async Countries\" />\n  );\n}"
+    },
+    {
+      "title": "Input States",
+      "description": "Required, disabled, error, and full width states.",
+      "code": "<Autocomplete options={options} label=\"Required\" required placeholder=\"This field is required\" />\n<Autocomplete options={options} label=\"Disabled\" disabled placeholder=\"This field is disabled\" />\n<Autocomplete options={options} label=\"Error State\" error helperText=\"This is an error message\" />\n<Autocomplete options={options} fullWidth label=\"Full Width\" placeholder=\"This input takes full width\" />"
+    },
+    {
+      "title": "Custom Empty State & Disabled Options",
+      "description": "Custom no options component and disabled options.",
+      "code": "import { useState } from 'react';\nimport { Autocomplete } from '@apollo/ui';\n\nconst options = [\n  { label: 'United States', value: 'US' },\n  { label: 'United Kingdom', value: 'UK', disabled: true },\n  { label: 'France', value: 'FR' },\n  { label: 'Germany', value: 'DE', disabled: true },\n  { label: 'Italy', value: 'IT' },\n];\n\nfunction Demo() {\n  const [value, setValue] = useState();\n  return (\n    <>\n      <Autocomplete options={[]} value={value} onChange={setValue} label=\"Custom Empty State\" noOptionsComponent={<div style={{ padding: 16, textAlign: 'center' }}><p>No options available</p><button>Add new option</button></div>} />\n      <Autocomplete options={options} value={value} onChange={setValue} label=\"Disabled Options\" placeholder=\"Some options are disabled\" />\n    </>\n  );\n}"
+    }
+  ],
+  "css": [
+    { "class": ".ApolloAutocomplete-root", "description": "Root container styling." },
+    { "class": ".ApolloAutocomplete-inputRoot", "description": "Input root container." },
+    { "class": ".ApolloAutocomplete-inputWrapper", "description": "Wrapper around input and chips." },
+    { "class": ".ApolloAutocomplete-trigger", "description": "Trigger element styling." },
+    { "class": ".ApolloAutocomplete-dropdownRoot", "description": "Dropdown menu root." },
+    { "class": ".ApolloAutocomplete-menuItem", "description": "Each menu item styling." },
+    { "class": ".ApolloAutocomplete-checkboxItem", "description": "Menu items with checkboxes." },
+    { "class": ".ApolloAutocomplete-chipContainer", "description": "Container of selected chips." },
+    { "class": ".ApolloAutocomplete-chip", "description": "Selected value chip styling." },
+    { "class": ".ApolloAutocomplete-clearButton", "description": "Clear selection button." },
+    { "class": ".ApolloAutocomplete-toggleButton", "description": "Dropdown toggle button." },
+    { "class": ".ApolloAutocomplete-chevronIcon", "description": "Chevron icon styling." },
+    { "class": ".ApolloAutocomplete-scrollTrigger", "description": "Infinite scroll trigger element." }
+  ],
+  "sourceLink": "https://cjx-apollo-ui.netlify.app/docs/components/autocomplete"
+}
